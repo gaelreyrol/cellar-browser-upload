@@ -8,6 +8,7 @@ const port = process.env.PORT || 3000;
 const app = express();
 
 const region = 'us-east-1';
+const algorithm = 'AWS4-HMAC-SHA256';
 
 app.set('view engine', 'ejs');
 
@@ -39,7 +40,7 @@ app.get('/', function(req, res) {
         conditions: [
             ['starts-with', '$key', ''],
             {'bucket': process.env.CELLAR_BUCKET},
-            {'x-amz-algorithm': 'AWS4-HMAC-SHA256'},
+            {'x-amz-algorithm': algorithm},
             {'x-amz-credential': credential},
             {'x-amz-date': now.format('YYYYMMDDTHHmmss') + 'Z'},
         ]
@@ -52,6 +53,7 @@ app.get('/', function(req, res) {
             endpoint: `https://${process.env.CELLAR_BUCKET}.${process.env.CELLAR_HOST}/`,
             policy: policyToString(policy),
             date: now.format('YYYYMMDDTHHmmss') + 'Z',
+            algorithm,
             credential,
             signature
         }
