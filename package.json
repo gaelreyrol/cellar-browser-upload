@@ -1,0 +1,11 @@
+{
+  "name": "cellar-browser-upload",
+  "version": "0.1.0",
+  "main": "index.js",
+  "dependencies": {
+    "dayjs": "^1.10.4",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1"
+  }
+}

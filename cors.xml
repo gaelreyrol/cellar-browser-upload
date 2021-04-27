@@ -1,0 +1,23 @@
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+    <CORSRule>
+        <AllowedMethod>GET</AllowedMethod>
+        <AllowedMethod>PUT</AllowedMethod>
+        <AllowedMethod>DELETE</AllowedMethod>
+        <AllowedMethod>HEAD</AllowedMethod>
+        <AllowedMethod>POST</AllowedMethod>
+        <AllowedOrigin>http://localhost:8080</AllowedOrigin>
+        <AllowedHeader>Authorization</AllowedHeader>
+        <AllowedHeader>Cache-Control</AllowedHeader>
+        <AllowedHeader>Content-Disposition</AllowedHeader>
+        <AllowedHeader>Content-Length</AllowedHeader>
+        <AllowedHeader>Content-MD5</AllowedHeader>
+        <AllowedHeader>Content-Type</AllowedHeader>
+        <AllowedHeader>Location</AllowedHeader>
+        <AllowedHeader>x-amz-acl</AllowedHeader>
+        <AllowedHeader>x-amz-content-sha256</AllowedHeader>
+        <AllowedHeader>x-amz-date</AllowedHeader>
+        <AllowedHeader>x-requested-with</AllowedHeader>
+        <ExposeHeader>ETag</ExposeHeader>
+        <ExposeHeader>Location</ExposeHeader>
+    </CORSRule>
+</CORSConfiguration>
