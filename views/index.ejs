@@ -8,16 +8,16 @@
     Key to upload: 
     <input type="input" name="key" required /><br />
 
-    X-Amz-Credential:
-    <input type="text" name="X-Amz-Credential" value="<%= form.credential %>" /><br />
-    X-Amz-Algorithm:
-    <input type="text" name="X-Amz-Algorithm" value="AWS4-HMAC-SHA256" /><br />
-    X-Amz-Date:
-    <input type="text" name="X-Amz-Date" value="<%= form.date %>" /><br />
     Policy:
-    <input name="Policy" value="<%= form.policy %>" /><br />
+    <input name="policy" value="<%= form.policy %>" /><br />
+    X-Amz-Algorithm:
+    <input type="text" name="x-amz-algorithm" value="AWS4-HMAC-SHA256" /><br />
+    X-Amz-Credential:
+    <input type="text" name="x-amz-credential" value="<%= form.credential %>" /><br />
+    X-Amz-Date:
+    <input type="text" name="x-amz-date" value="<%= form.date %>" /><br />
     X-Amz-Signature:
-    <input name="X-Amz-Signature" value="<%= form.signature %>" /><br />
+    <input name="x-amz-signature" value="<%= form.signature %>" /><br />
 
     File: 
     <input type="file" name="file" required /><br />

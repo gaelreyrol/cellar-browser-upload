@@ -12,7 +12,7 @@ const region = 'us-east-1';
 app.set('view engine', 'ejs');
 
 function signRaw(key, message) {   
-    return crypto.createHash('sha256', key).update(message).digest('hex');
+    return crypto.createHash('sha256', key).update(message).digest();
 }
 
 function signPolicy(date, content) {
@@ -21,7 +21,7 @@ function signPolicy(date, content) {
     const timestampService = signRaw(timestampRegion, 's3');
     const signingKey = signRaw(timestampService, 'aws4_request');
     
-    return signRaw(signingKey, content);
+    return crypto.createHash('sha256', signingKey).update(content).digest('hex')
 }
 
 function policyToString(policy) {
