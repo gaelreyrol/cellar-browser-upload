@@ -30,7 +30,7 @@ function policyToString(policy) {
 
 app.get('/', function(req, res) {
     const now = dayjs();
-    const expirationDate = now.add(1, 'hour');
+    const expirationDate = now.add(4, 'hour');
 
     const credential = `${process.env.CELLAR_ACCESS_KEY_ID}/${now.format('YYYYMMDD')}/${region}/s3/aws4_request`;
 
@@ -49,7 +49,7 @@ app.get('/', function(req, res) {
 
     res.render('index', {
         form: {
-            endpoint: `https://${process.env.CELLAR_BUCKET}.${process.env.CELLAR_HOST}`,
+            endpoint: `https://${process.env.CELLAR_BUCKET}.${process.env.CELLAR_HOST}/`,
             policy: policyToString(policy),
             date: now.format('YYYYMMDDTHHmmss') + 'Z',
             credential,
