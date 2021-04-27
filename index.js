@@ -25,7 +25,7 @@ function signPolicy(date, content) {
 }
 
 function policyToString(policy) {
-    return Buffer.from(JSON.stringify(policy)).toString('base64');
+    return Buffer.from(JSON.stringify(policy), 'utf8').toString('base64');
 }
 
 app.get('/', function(req, res) {
